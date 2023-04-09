@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
+  const { loginWithRedirect, isAuthenticated ,logout } = useAuth0();
   return (
+ 
     <div className="">
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary ">
         <a className="navbar-brand" href="#">
@@ -109,18 +112,36 @@ const Navbar = () => {
       <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
       
     </form> */}
-          <button className="btn btn-outline-light my-2 my-sm-0" type="submit">
+          {/* <button className="btn btn-outline-light my-2 my-sm-0" type="submit">
             Sign Up
           </button>
-          <Link to="/signin">
+       */}
+
         
+        {
+          (isAuthenticated)?
+          <li>
           <button
             className="mx-1 btn btn-outline-light my-2 my-sm-0"
             type="submit"
+            onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
+          >
+            Log Out
+          </button>
+          </li>
+          :
+          <li>
+          <button
+            className="mx-1 btn btn-outline-light my-2 my-sm-0"
+            type="submit"
+            onClick={() => loginWithRedirect()}
           >
             Sign in
           </button>
-          </Link>
+          </li>
+        }
+
+       
         </div>
       </nav>
     </div>
