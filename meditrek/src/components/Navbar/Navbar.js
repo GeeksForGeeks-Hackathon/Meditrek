@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
-  const { loginWithRedirect, isAuthenticated ,logout } = useAuth0();
+  const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
   return (
- 
     <div className="">
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary ">
         <a className="navbar-brand" href="#">
@@ -20,62 +19,14 @@ const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon">
-            {/* <li className="nav-item">
-        <a className="nav-link" href="#">Home </a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">Services</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">About Us</a>
-      </li>
- 
-      <li className="nav-item">
-        <a className="nav-link" href="#">Doctors</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">Contact Us</a>
-      </li> */}
-          </span>
+          <span className="navbar-toggler-icon"></span>
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              {/* <Link className="nav-item" to="/#">
+              <a className="nav-link" href="/#">
                 Home
-              </Link>
-            </li>
-
-            <li className="nav-item">
-              <Link className="nav-link" to="/#services">
-                Services
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/#doctors">
-                Doctors
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/#aboutus">
-                About Us
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/#contactus">
-                Contact Us
-              </Link>
-            </li> */}
-           <a className="nav-item" href="/#">
-                Home
-              </a>
-            </li>
-
-            <li className="nav-item">
-              <a className="nav-link" href="/#services">
-                Services
               </a>
             </li>
             <li className="nav-item">
@@ -83,6 +34,27 @@ const Navbar = () => {
                 Doctors
               </a>
             </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/#services">
+                Services
+              </a>
+            </li>
+            {isAuthenticated ? (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/appointment">
+                    Schedule Appointment
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/healthreport">
+                   HealthReport 
+                  </a>
+                </li>
+              </>
+            ) : (
+              <li></li>
+            )}
             <li className="nav-item">
               <a className="nav-link" href="/#aboutus">
                 About Us
@@ -93,55 +65,30 @@ const Navbar = () => {
                 Contact Us
               </a>
             </li>
-            {/* <li className="nav-item dropdown">
-        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a className="dropdown-item" href="#">Action</a>
-          <a className="dropdown-item" href="#">Another action</a>
-          <div className="dropdown-divider"></div>
-          <a className="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li> */}
-            {/* <li className="nav-item">
-        <a className="nav-link disabled" href="#">Disabled</a>
-      </li> */}
           </ul>
-          {/* <form className="form-inline my-2 my-lg-0">
-      <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-      
-    </form> */}
-          {/* <button className="btn btn-outline-light my-2 my-sm-0" type="submit">
-            Sign Up
-          </button>
-       */}
-
-        
-        {
-          (isAuthenticated)?
-          <li>
-          <button
-            className="mx-1 btn btn-outline-light my-2 my-sm-0"
-            type="submit"
-            onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
-          >
-            Log Out
-          </button>
-          </li>
-          :
-          <li>
-          <button
-            className="mx-1 btn btn-outline-light my-2 my-sm-0"
-            type="submit"
-            onClick={() => loginWithRedirect()}
-          >
-            Sign in
-          </button>
-          </li>
-        }
-
-       
+          {isAuthenticated ? (
+            <li>
+              <button
+                className="mx-1 btn btn-outline-light my-2 my-sm-0"
+                type="submit"
+                onClick={() =>
+                  logout({ logoutParams: { returnTo: window.location.origin } })
+                }
+              >
+                Log Out
+              </button>
+            </li>
+          ) : (
+            <li>
+              <button
+                className="mx-1 btn btn-outline-light my-2 my-sm-0"
+                type="submit"
+                onClick={() => loginWithRedirect()}
+              >
+                Sign in
+              </button>
+            </li>
+          )}
         </div>
       </nav>
     </div>
