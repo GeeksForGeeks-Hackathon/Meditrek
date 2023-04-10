@@ -58,7 +58,7 @@ const Footer = () => {
           </Grid>
           <Grid item xs={12} md={4}>
             <Typography variant="h6" className={classes.title}>
-              Contact Us
++              Contact Us
             </Typography>
             <Typography variant="body1">
               123 Main Street<br />

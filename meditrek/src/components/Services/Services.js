@@ -1,7 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Typography, Button } from '@material-ui/core';
-
+import Service1 from "./service1-copy.png"
+import Service2 from "./service2-copy.jpg"
+import Service3 from "./service3-copy.jpg"
 const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
@@ -20,6 +22,7 @@ const useStyles = makeStyles(() => ({
   serviceImage: {
     width: '100%',
     marginBottom: 20,
+
   },
   serviceTitle: {
     fontWeight: 'bold',
@@ -38,13 +41,12 @@ const Services = () => {
       <Grid container spacing={3} justify="center">
         <Grid item xs={12} sm={6} md={4}>
           <div className={classes.serviceItem}>
-            <img src="/images/service1.jpg" alt="Service 1" className={classes.serviceImage} />
+            <img src={Service1} alt="Service 1" className={classes.serviceImage} />
             <Typography variant="h6" className={classes.serviceTitle}>
               Get AI Guidance
             </Typography>
             <Typography variant="body1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vulputate quam vel lorem tincidunt
-              consectetur.
+            Our website offers an innovative way for patients to receive guidance and support for their health and wellness needs.Get Guidance now!
             </Typography>
             <Button variant="contained" color="primary" href="#">
               Learn More
@@ -53,13 +55,12 @@ const Services = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <div className={classes.serviceItem}>
-            <img src="/images/service2.jpg" alt="Service 2" className={classes.serviceImage} />
+            <img src={Service2} alt="Service 2" className={classes.serviceImage} />
             <Typography variant="h6" className={classes.serviceTitle}>
               Schedule an Appointment
             </Typography>
             <Typography variant="body1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vulputate quam vel lorem tincidunt
-              consectetur.
+            We offer a convenient way for patients to schedule appointments with our team of experienced doctors.Schedule an appointment now!
             </Typography>
             <Button variant="contained" color="primary" href="#">
               Learn More
@@ -68,13 +69,12 @@ const Services = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <div className={classes.serviceItem}>
-            <img src="/images/service3.jpg" alt="Service 3" className={classes.serviceImage} />
+            <img src={Service3} alt="Service 3" className={classes.serviceImage} />
             <Typography variant="h6" className={classes.serviceTitle}>
-              Download HealthReport
+              Download Documents
             </Typography>
             <Typography variant="body1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vulputate quam vel lorem tincidunt
-              consectetur.
+            We offer a convenient way for patients to access and download important documents like Health Insurance,medical records and bills.
             </Typography>
             <Button variant="contained" color="primary" href="#">
               Learn More

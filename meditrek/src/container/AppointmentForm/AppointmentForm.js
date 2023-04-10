@@ -5,6 +5,7 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import DateFnsUtils from "@date-io/date-fns";
 import Typography from "@material-ui/core/Typography";
+import Footer from "../../components/FooterComp/FooterComp";
 import {
   DatePicker,
   TimePicker,
@@ -169,6 +170,9 @@ const AppointmentForm = () => {
           Schedule
         </Button>
       </form>
+      <section id="contactus">
+      <Footer/>
+      </section>
     </div>
   );
 };
