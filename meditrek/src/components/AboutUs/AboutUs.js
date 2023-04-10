@@ -55,7 +55,7 @@ const AboutUs = () => {
           <Grid item xs={12} md={6}>
             <Box className={classes.aboutUsContent}>
               <Typography
-                variant="h4"
+                variant="h3"
                 component="h2"
                 className={classes.aboutUsTitle}
               >
