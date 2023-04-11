@@ -40,7 +40,7 @@ const Services = () => {
       <Typography variant="h3" component="h2" className={classes.title}>
         Our Services
       </Typography>
-      <Grid container spacing={3} justify="center">
+      <Grid container spacing={3} justifyContent="center">
         <Grid item xs={12} sm={6} md={4}>
           <div className={classes.serviceItem}>
             <img src={Service1} alt="Service 1" className={classes.serviceImage} />

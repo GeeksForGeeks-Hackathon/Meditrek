@@ -59,7 +59,7 @@ const AboutUs = () => {
                 component="h2"
                 className={classes.aboutUsTitle}
               >
-                Who We Are ?
+                Who Are We ?
               </Typography>
               <Typography
                 variant="body1"

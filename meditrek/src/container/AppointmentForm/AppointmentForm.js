@@ -1,16 +1,18 @@
 import React, { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import DateFnsUtils from "@date-io/date-fns";
 import Typography from "@material-ui/core/Typography";
-import Footer from "../../components/FooterComp/FooterComp";
+// import Footer from "../../components/FooterComp/FooterComp";
 import {
   DatePicker,
   TimePicker,
   MuiPickersUtilsProvider,
 } from "@material-ui/pickers";
+import { User } from "@auth0/auth0-react";
 // import { Alert } from 'bootstrap';
 
 const useStyles = makeStyles((theme) => ({
@@ -50,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const AppointmentForm = () => {
+  const { user, loginWithRedirect, isAuthenticated, logout } = useAuth0();
   const classes = useStyles();
   const [selectedDate, handleDateChange] = useState(new Date());
   const [selectedTime, handleTimeChange] = useState(new Date());
@@ -58,10 +61,19 @@ const AppointmentForm = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [reason, setReason] = useState("");
   const [doctor, setDoctor] = useState(" ");
+  const [age, setAge] = useState(" ");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Thank you for filling the form!");
+    setName("");
+    setEmail("");
+    setPhoneNumber("");
+    setReason("");
+    setDoctor("");
+    setAge("");
+    handleDateChange(new Date());
+    handleTimeChange(new Date());
     // handle form submission logic here
   };
 
@@ -123,9 +135,9 @@ const AppointmentForm = () => {
               required
               fullWidth
               variant="outlined"
-              label="Reason for Appointment"
-              value={reason}
-              onChange={(e) => setReason(e.target.value)}
+              label="Doctors Name"
+              value={doctor}
+              onChange={(e) => setDoctor(e.target.value)}
               className={classes.textField}
             />
           </Grid>
@@ -134,9 +146,9 @@ const AppointmentForm = () => {
               required
               fullWidth
               variant="outlined"
-              label="Reason for Appointment"
-              value={reason}
-              onChange={(e) => setReason(e.target.value)}
+              label="Age"
+              value={age}
+              onChange={(e) => setAge(e.target.value)}
               className={classes.textField}
             />
           </Grid>
@@ -170,9 +182,6 @@ const AppointmentForm = () => {
           Schedule
         </Button>
       </form>
-      <section id="contactus">
-      <Footer/>
-      </section>
     </div>
   );
 };

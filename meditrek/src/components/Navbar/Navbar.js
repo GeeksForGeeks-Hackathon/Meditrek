@@ -1,9 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Await, Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
-  const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
+  const { user,loginWithRedirect, isAuthenticated, logout } = useAuth0();
+  const func1 = () => {
+    console.log(user.name);
+    console.log(user.email);
+    console.log("this is called")
+    Await(200);
+  };
+  const func2 = () => {
+    console.log("Function 2 called");
+  };
+
+  const callFuncs = () => {
+
+    loginWithRedirect();
+    func1();
+  };
+
   return (
     <div className="">
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary ">
@@ -68,11 +84,11 @@ const Navbar = () => {
           </ul>
           {isAuthenticated ? (
             <li>
+
               <button
                 className="mx-1 btn btn-outline-light my-2 my-sm-0"
                 type="submit"
-                onClick={() =>
-                  logout({ logoutParams: { returnTo: window.location.origin } })
+                onClick={()=>logout({ logoutParams: { returnTo: window.location.origin } })
                 }
               >
                 Log Out
@@ -83,7 +99,7 @@ const Navbar = () => {
               <button
                 className="mx-1 btn btn-outline-light my-2 my-sm-0"
                 type="submit"
-                onClick={() => loginWithRedirect()}
+                onClick={()=>callFuncs()}
               >
                 Sign in
               </button>

@@ -32,7 +32,7 @@ const Footer = () => {
   return (
     <div className={classes.root}>
       <Container>
-        <Grid container spacing={4} justify="space-between">
+        <Grid container spacing={4} justifyContent="space-between">
           <Grid item xs={12} md={4}>
             {/* <img src="/logo.svg" alt="Logo" className={classes.logo} /> */}
             <Typography variant="body1">
@@ -50,10 +50,10 @@ const Footer = () => {
               Quick Links
             </Typography>
             <Typography variant="body1">
-              <a href="/" className={classes.link}>Home</a><br />
-              <a href="/about" className={classes.link}>About Us</a><br />
-              <a href="/services" className={classes.link}>Services</a><br />
-              <a href="/contact" className={classes.link}>Contact Us</a><br />
+              <a href="/#" className={classes.link}>Home</a><br />
+              <a href="/#about" className={classes.link}>About Us</a><br />
+              <a href="/#services" className={classes.link}>Services</a><br />
+              <a href="/#contact" className={classes.link}>Contact Us</a><br />
             </Typography>
           </Grid>
           <Grid item xs={12} md={4}>
