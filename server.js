@@ -24,11 +24,13 @@ app.use(moragan('dev'))
 
 //Routes
 
-app.get('/',(req,res)=>{
-    res.status(200).send({
-        message:"server running",
-    });
-});
+// app.get('/',(req,res)=>{
+//     res.status(200).send({
+//         message:"server running",
+//     });
+// });
+
+app.use('/api/v1/user',require('./routes/userRoutes'))
 
 //Port
 
