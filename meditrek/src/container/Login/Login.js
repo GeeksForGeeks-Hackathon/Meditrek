@@ -1,14 +1,15 @@
 import React from "react";
-import { Form, Input } from "antd";
+import { Form, Input, message } from "antd";
+import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
-import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   login: {
     backgroundSize: "cover",
     backgroundPosition: "center",
-    backgroundColor:"grey",
+    backgroundColor: "grey",
     height: "90vh",
     display: "flex",
     justifyContent: "center",
@@ -31,7 +32,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const Login = (theme) => {
-  const onFinishHandler = (values) => {console.log(values)};
+  const navigate = useNavigate();
+  const onFinishHandler = async (values) => {
+    try {
+      const res =await axios.post('/api/v1/user/login',values);
+      if(res.data.success){
+        localStorage.setItem("token",res.data.token)
+        message.success("Login Successful")
+        navigate("/")
+      }
+    } catch (error) {
+      console.log(error);
+      message.error("Error in Login went wrong!");
+    }
+  };
   const classes = useStyles();
 
   return (
@@ -41,18 +55,18 @@ const Login = (theme) => {
           <div className={classes.loginText}>
             <Typography variant="h5">Login Form</Typography>
           </div>
-          <Form.Item label="Email" name="email">
+          <Form.Item label="email" name="email">
             <Input type="email" required />
           </Form.Item>
-          <Form.Item label="Password" name="password">
+          <Form.Item label="password" name="password">
             <Input type="password" required />
           </Form.Item>
           <div className="login_footer">
-          <Link className="my-3" to="/register">Not an User? Register Now </Link>
+            <Link className="my-3" to="/register">
+              Not an User? Register Now{" "}
+            </Link>
             <button className="mx-5 btn btn-primary">Login</button>
-            
           </div>
-        
         </Form>
       </div>
     </div>
