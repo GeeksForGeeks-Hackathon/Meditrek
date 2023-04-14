@@ -4,6 +4,8 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
+import { useDispatch } from "react-redux";
+import { showLoading,hideLoading } from "../../redux/features/alertSlice";
 
 const useStyles = makeStyles((theme) => ({
   login: {
@@ -33,15 +35,19 @@ const useStyles = makeStyles((theme) => ({
 }));
 const Login = (theme) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const onFinishHandler = async (values) => {
     try {
+      dispatch(showLoading())
       const res =await axios.post('/api/v1/user/login',values);
+      dispatch(hideLoading())
       if(res.data.success){
         localStorage.setItem("token",res.data.token)
         message.success("Login Successful")
         navigate("/")
       }
     } catch (error) {
+      dispatch(hideLoading())
       console.log(error);
       message.error("Error in Login went wrong!");
     }

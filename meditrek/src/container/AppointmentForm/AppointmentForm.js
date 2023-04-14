@@ -52,6 +52,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const AppointmentForm = () => {
+
+
   const { user, loginWithRedirect, isAuthenticated, logout } = useAuth0();
   const classes = useStyles();
   const [selectedDate, handleDateChange] = useState(new Date());

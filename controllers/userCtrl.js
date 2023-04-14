@@ -1,10 +1,8 @@
-// const loginController=()=>{}
-// const registerController=()=>{}
 
 const userModel = require("../models/userModels");
 const bcrypt = require("bcryptjs");
-const jwt=require('jsonwebtoken')
-//Register Callback
+const jwt = require("jsonwebtoken");
+
 
 const registerController = async (req, res) => {
   try {
@@ -34,18 +32,18 @@ const registerController = async (req, res) => {
 // login callback
 const loginController = async (req, res) => {
   try {
-    console.log("1")
+    console.log("1");
     const user = await userModel.findOne({ email: req.body.email });
-    console.log("2")
+    console.log("2");
     if (!user) {
-      console.log("3")
+      console.log("3");
       return res
         .status(200)
         .send({ message: "user not found", success: false });
     }
     const isMatch = await bcrypt.compare(req.body.password, user.password);
     if (!isMatch) {
-      console.log("4")
+      console.log("4");
       return res
         .status(200)
         .send({ message: "Invlaid EMail or Password", success: false });
@@ -53,12 +51,38 @@ const loginController = async (req, res) => {
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "1d",
     });
-    console.log("5")
+    console.log("5");
     res.status(200).send({ message: "Login Success", success: true, token });
   } catch (error) {
     console.log(error);
     res.status(500).send({ message: `Error in Login CTRL ${error.message}` });
   }
 };
+const authController = async (req, res) => {
+  try {
+    const user = await userModel.findOne({ _id: req.body.userId });
+    if (!user) {
+      return res.status(200).send({
+        message: "user not found",
+        success: false,
+      });
+    } else {
+      res.status(200).send({
+        success: true,
+        data: {
+          name: user.name,
+          email: user.email,
+        },
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      message: "auth error",
+      success: false,
+      error,
+    });
+  }
+};
 
-module.exports = { loginController, registerController };
+module.exports = { loginController, registerController, authController };

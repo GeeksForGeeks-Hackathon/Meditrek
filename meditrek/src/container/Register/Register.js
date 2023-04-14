@@ -3,6 +3,8 @@ import { Form, Input, message } from "antd";
 import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
+import { useDispatch } from "react-redux";
+import { showLoading,hideLoading } from "../../redux/features/alertSlice";
 import { Link, useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -33,9 +35,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 const Register = (theme) => {
   const navigate = useNavigate();
+  const dispatch=useDispatch();
   const onFinishHandler = async (values) => {
     try {
+      dispatch(showLoading())
       const res = await axios.post('/api/v1/user/register', values);
+      dispatch(hideLoading())
       if (res.data.success) {
         message.success("Registered Successfully!");
         navigate("/login");
@@ -43,6 +48,7 @@ const Register = (theme) => {
         message.error(res.data.message);
       }
     } catch (error) {
+      dispatch(hideLoading())
       console.log(error);
       message.error("Something went wrong");
     }
