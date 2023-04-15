@@ -8,9 +8,9 @@ The appointment system allows patients to book appointments with healthcare prov
 
 AI-based medical advisors help patients make informed health decisions. Using the latest artificial intelligence technology, our medical advisors provide personalized advice and recommendations based on your health data and symptoms.
 
-Our portal to download health documents provides patients with easy access to their medical records, test results, and other critical health documents. Meditrik lets you access your health information securely and from anywhere at any time.
+Our portal to download health documents provides patients with easy access to their medical records, test results, and other critical health documents. Meditrek lets you access your health information securely and from anywhere at any time.
 
-Our platform is designed with both patients and healthcare providers in mind. Providers can use Meditrik to manage their schedules, reduce wait times, and improve patient outcomes. Patients can use Meditrek to take control of their health and make informed care decisions.
+Our platform is designed with both patients and healthcare providers in mind. Providers can use Meditrek to manage their schedules, reduce wait times, and improve patient outcomes. Patients can use Meditrek to take control of their health and make informed care decisions.
 
 Meditrek is a comprehensive and convenient platform that streamlines healthcare delivery, empowers patients, and improves healthcare outcomes. Sign up today to start experiencing the benefits of Meditrek!
 
