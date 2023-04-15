@@ -58,11 +58,11 @@
    
     
     
-   TechStack:  
+   TechStack:
+   Bootstrap
    ReactJs
    NodeJs
    SQL
-   Bootstrap
    Git
 
 
