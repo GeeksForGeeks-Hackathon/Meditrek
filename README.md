@@ -26,8 +26,12 @@ Meditrik is a comprehensive and convenient platform that streamlines healthcare 
 
 
 ## Screenshots
+![screenshot](https://user-images.githubusercontent.com/84934990/232253432-46320ac3-3075-4eac-a423-ea8bd3f25d3f.png)
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![screenshot](https://user-images.githubusercontent.com/84934990/232253445-ef2f3ba7-a92b-40c0-9bae-441a10ca24f1.png)
+
+![screenshot](https://user-images.githubusercontent.com/84934990/232253395-cdae750b-c6bc-4d39-a7c9-ae92ad73b35f.png)
+
 
 
 ## Demo
@@ -47,13 +51,25 @@ https://github.com/GeeksForGeeks-Hackathon/Meditrex.git
 Install dependencies
 
 ```bash
+cd meditrek
+```
+
+```bash
   npm install
+```
+
+```bash 
+cd ..
+```
+
+```bash
+npm install
 ```
 
 Start the server and client concurrently
 
 ```bash
-  npm start
+  npm run dev
 ```
 
 
