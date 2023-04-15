@@ -11,6 +11,7 @@ import { useState } from "react";
 import AppointmentForm from "./container/AppointmentForm/AppointmentForm";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { set } from "date-fns";
+import AppointmentDashboard from "./container/AppointmentDashboard/AppointmentDashboard";
 
 function App() {
 const [state, setstate] = useState(false);
@@ -23,9 +24,10 @@ const [state, setstate] = useState(false);
           <Route exact path="/" element={<Home />} />
           {/* <Route path="/signin" element={<SignIn />} /> */}
           <Route path="/appointment" element={<AppointmentForm />} />
+          <Route path="/appointmentdash" element={<AppointmentDashboard/>}/>
           <Route path="/login" element={<Login state={state} setstate={setstate} />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/healthreport" element={<MyDocs />} />
+          {/* <Route path="/healthreport" element={<MyDocs />} /> */}
         </Routes>
         </React.Fragment>)}
 

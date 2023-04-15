@@ -3,7 +3,7 @@ const colors=require('colors')
 const moragan=require('morgan')
 const dotenv=require('dotenv')
 const connectDB=require('./config/db')
-
+const path = require('path')
 //Config .env
 
 dotenv.config()
@@ -32,6 +32,14 @@ app.use(moragan('dev'))
 
 app.use('/api/v1/user',require('./routes/userRoutes'))
 app.use('/api/v1/appointmentuser',require('./routes/appointmentRoutes'))
+
+
+//Static Files 
+
+app.use(express.static(path.join(__dirname,"./meditrex/build")))
+app.get("*",function(res,req){
+    res.sendFile(path.join(__dirname,"./meditrex/build/index.html"))
+});
 
 //Port
 

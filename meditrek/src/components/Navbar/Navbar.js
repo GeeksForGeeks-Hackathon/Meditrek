@@ -62,11 +62,11 @@ const Navbar = () => {
                     Schedule Appointment
                   </Link>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <a className="nav-link" href="/healthreport">
                    HealthReport 
                   </a>
-                </li>
+                </li> */}
               </>
             ) : (
               <li></li>
