@@ -51,10 +51,14 @@
     
    <h4>Roles of Members</h4>
     
-   Niranjan: EHRS Model , Frontend and monitoring progress
-   Sumit:frontend
-   Rohan:SQL(Database) and other cloud functionalities(GCP firebase)
-   Varun:API integration and NodeJS
+   Niranjan: EHRS Model , Frontend and monitoring progress  
+   
+   Sumit:frontend  
+   
+   Rohan:SQL(Database) and other cloud functionalities(GCP firebase)  
+   
+   Varun:API integration and NodeJS  
+   
     
     
    TechStack
