@@ -10,6 +10,7 @@ import Spinner from "./components/Spinner/Spinner";
 import { useState } from "react";
 import AppointmentForm from "./container/AppointmentForm/AppointmentForm";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { set } from "date-fns";
 
 function App() {
 const [state, setstate] = useState(false);
@@ -17,12 +18,12 @@ const [state, setstate] = useState(false);
   return (
     <React.Fragment>
       <Router>
-        {loading ?(<Spinner/>):( <React.Fragment> <Navbar />
+        {loading ?(<Spinner/>):( <React.Fragment> <Navbar state={state} setstate={setstate} />
         <Routes>
           <Route exact path="/" element={<Home />} />
           {/* <Route path="/signin" element={<SignIn />} /> */}
           <Route path="/appointment" element={<AppointmentForm />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login state={state} setstate={setstate} />} />
           <Route path="/register" element={<Register />} />
           <Route path="/healthreport" element={<MyDocs />} />
         </Routes>

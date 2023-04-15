@@ -31,6 +31,7 @@ app.use(moragan('dev'))
 // });
 
 app.use('/api/v1/user',require('./routes/userRoutes'))
+app.use('/api/v1/appointmentuser',require('./routes/appointmentRoutes'))
 
 //Port
 

@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import { Form, Input, message } from "antd";
+import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
@@ -52,36 +55,56 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const AppointmentForm = () => {
-
-
+  const navigate =useNavigate();
   const { user, loginWithRedirect, isAuthenticated, logout } = useAuth0();
   const classes = useStyles();
   const [selectedDate, handleDateChange] = useState(new Date());
   const [selectedTime, handleTimeChange] = useState(new Date());
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [reason, setReason] = useState("");
-  const [doctor, setDoctor] = useState(" ");
-  const [age, setAge] = useState(" ");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Thank you for filling the form!");
-    setName("");
-    setEmail("");
-    setPhoneNumber("");
-    setReason("");
-    setDoctor("");
-    setAge("");
-    handleDateChange(new Date());
-    handleTimeChange(new Date());
-    // handle form submission logic here
+  const [name, setName] = useState("Name");
+  const [email, setEmail] = useState("Email");
+  const [phoneNumber, setPhoneNumber] = useState("+91");
+  const [reason, setReason] = useState("Illness");
+  const [doctor, setDoctor] = useState("Dr");
+  const [age, setAge] = useState("21");
+  const onFinishHandler = async (values) => {
+    console.log("Printing values")
+    console.log(values)
+    console.log({name:name,email:email,phoneno: phoneNumber,reason:reason,docname:doctor,age:age,date:selectedDate,time:selectedTime})
+    console.log("End of printing values")
+    try {
+      // dispatch(showLoading())
+      const res = await axios.post(
+        "/api/v1/appointmentuser/appointment",
+        {name:name,email:email,phoneno: phoneNumber,reason:reason,docname:doctor,age:age,date:selectedDate,time:selectedTime},
+      );
+     
+      if (res.data.success) {
+        message.success("Appointment Request Sent Successful");
+        setEmail("");
+        setPhoneNumber("");
+        setReason("");
+        setDoctor("");
+        setAge("");
+        handleDateChange(new Date());
+        handleTimeChange(new Date());
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error);
+      message.error("Error in submitting!!");
+      setEmail("");
+      setPhoneNumber("");
+      setReason("");
+      setDoctor("");
+      setAge("");
+      handleDateChange(new Date());
+      handleTimeChange(new Date());
+    }
   };
 
   return (
     <div className={classes.formContainer}>
-      <form onSubmit={handleSubmit} className={classes.form}>
+      <form  className={classes.form}>
         <Typography variant="h4" className={classes.formHeading}>
           Schedule an Appointment
         </Typography>
@@ -115,6 +138,7 @@ const AppointmentForm = () => {
               fullWidth
               variant="outlined"
               label="Phone Number"
+              name="phoneno"
               type="tel"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
@@ -126,6 +150,7 @@ const AppointmentForm = () => {
               required
               fullWidth
               variant="outlined"
+              name="reason"
               label="Reason for Appointment"
               value={reason}
               onChange={(e) => setReason(e.target.value)}
@@ -137,6 +162,7 @@ const AppointmentForm = () => {
               required
               fullWidth
               variant="outlined"
+              name=""
               label="Doctors Name"
               value={doctor}
               onChange={(e) => setDoctor(e.target.value)}
@@ -180,6 +206,7 @@ const AppointmentForm = () => {
           variant="contained"
           color="primary"
           className={classes.formButton}
+          onClick={onFinishHandler}
         >
           Schedule
         </Button>

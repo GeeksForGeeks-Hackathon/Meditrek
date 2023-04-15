@@ -2,6 +2,7 @@ import React from "react";
 import HeroSection from "../../components/HeroSection/HeroSection";
 import AboutUs from "../../components/AboutUs/AboutUs";
 import Footer from "../../components/FooterComp/FooterComp";
+import Doctors from "../../components/Doctors/Doctors";
 import Services from "../../components/Services/Services";
 import axios from "axios";
 import { useEffect } from "react";
@@ -35,6 +36,9 @@ const Home = () => {
       </section>
       <section id="aboutus"> 
       <AboutUs />
+      </section>
+      <section id="doctors"> 
+      <Doctors />
       </section>
       <section id="services">
         <Services/>

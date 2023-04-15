@@ -50,9 +50,9 @@ const Services = () => {
             <Typography variant="body1">
             Our website offers an innovative way for patients to receive guidance and support for their health and wellness needs.Get Guidance now!
             </Typography>
-            <Button className="my-3"  variant="contained" color="primary" href="#">
+            {/* <Button className="my-3"  variant="contained" color="primary" href="#">
               Learn More
-            </Button>
+            </Button> */}
           </div>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
@@ -64,9 +64,9 @@ const Services = () => {
             <Typography variant="body1">
             We offer a convenient way for patients to schedule appointments with our team of experienced doctors.Schedule an appointment now!
             </Typography>
-            <Button className="my-3" variant="contained" color="primary" href="#">
+            {/* <Button className="my-3" variant="contained" color="primary" href="#">
               Learn More
-            </Button>
+            </Button> */}
           </div>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
@@ -78,9 +78,9 @@ const Services = () => {
             <Typography variant="body1">
             We offer a convenient way for patients to access and download important documents like Health Insurance,medical records and bills.
             </Typography>
-            <Button className="my-3" variant="contained" color="primary" href="#">
+            {/* <Button className="my-3" variant="contained" color="primary" href="#">
               Learn More
-            </Button>
+            </Button> */}
           </div>
         </Grid>
       </Grid>

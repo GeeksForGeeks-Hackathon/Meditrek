@@ -80,13 +80,13 @@ const AboutUs = () => {
                 believe in delivering the best possible value to our clients
                 and strive to exceed their expectations every day.
               </Typography>
-              <Button
+              {/* <Button
                 variant="contained"
                 color="primary"
                 className={classes.aboutUsButton}
               >
                 Learn More
-              </Button>
+              </Button> */}
             </Box>
 
           </Grid>
