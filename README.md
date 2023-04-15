@@ -40,7 +40,7 @@
     diverse dataset to train the model since the PHI data is confidential. The model has to ensure the privacy of the PHI
     while also creating a shareable representation of the medical text. This ensures that the shareable information can be
     used when required for any research. A robust de-identification classifier has to be built to separate the private
-    information from the data that you can publicly access.
+    information from the data that you can publicly access..
     
 
    <h4>Websites Functionalities</h4>
@@ -53,7 +53,7 @@
     
    Niranjan: EHRS Model , Frontend and monitoring progress
    Sumit:frontend
-   Rohan:SQL and other cloud functionalities
+   Rohan:SQL(Database) and other cloud functionalities(GCP firebase)
    Varun:API integration and NodeJS
     
     
