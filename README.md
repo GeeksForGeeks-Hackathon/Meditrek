@@ -30,8 +30,7 @@ Meditrik is a comprehensive and convenient platform that streamlines healthcare 
 
 ![screenshot](https://user-images.githubusercontent.com/84934990/232253445-ef2f3ba7-a92b-40c0-9bae-441a10ca24f1.png)
 
-![screenshot](https://user-images.githubusercontent.com/84934990/232253395-cdae750b-c6bc-4d39-a7c9-ae92ad73b35f.png)
-
+![screenshot](https://user-images.githubusercontent.com/84934990/232253470-e396baf3-7fed-4ff7-987f-eb950421bcc1.png)
 
 
 ## Demo
