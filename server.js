@@ -36,9 +36,9 @@ app.use('/api/v1/appointmentuser',require('./routes/appointmentRoutes'))
 
 //Static Files 
 
-app.use(express.static(path.join(__dirname,"./meditrex/build")))
+app.use(express.static(path.join(__dirname,"./meditrek/build")))
 app.get("*",function(req,res){
-    res.sendFile(path.join(__dirname,"./meditrex/build/index.html"))
+    res.sendFile(path.join(__dirname,"./meditrek/build/index.html"))
 });
 
 //Port
