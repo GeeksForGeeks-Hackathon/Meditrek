@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
-import { Form, Input, message } from "antd";
+import { message } from "antd";
 import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
@@ -15,7 +13,7 @@ import {
   TimePicker,
   MuiPickersUtilsProvider,
 } from "@material-ui/pickers";
-import { User } from "@auth0/auth0-react";
+// import { User } from "@auth0/auth0-react";
 // import { Alert } from 'bootstrap';
 
 const useStyles = makeStyles((theme) => ({
@@ -55,22 +53,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const AppointmentForm = () => {
-  const navigate =useNavigate();
-  const { user, loginWithRedirect, isAuthenticated, logout } = useAuth0();
+
   const classes = useStyles();
   const [selectedDate, handleDateChange] = useState(new Date());
   const [selectedTime, handleTimeChange] = useState(new Date());
-  const [name, setName] = useState("Name");
-  const [email, setEmail] = useState("Email");
-  const [phoneNumber, setPhoneNumber] = useState("+91");
-  const [reason, setReason] = useState("Illness");
-  const [doctor, setDoctor] = useState("Dr");
-  const [age, setAge] = useState("21");
-  const onFinishHandler = async (values) => {
-    console.log("Printing values")
-    console.log(values)
-    console.log({name:name,email:email,phoneno: phoneNumber,reason:reason,docname:doctor,age:age,date:selectedDate,time:selectedTime})
-    console.log("End of printing values")
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [reason, setReason] = useState("");
+  const [doctor, setDoctor] = useState("");
+  const [age, setAge] = useState("");
+  const onFinishHandler = async () => {
     try {
       // dispatch(showLoading())
       const res = await axios.post(
@@ -79,18 +72,20 @@ const AppointmentForm = () => {
       );
      
       if (res.data.success) {
+      
+        // setEmail("");
+        // setPhoneNumber("");
+        // setReason("");
+        // setDoctor("");
+        // setAge("");
+        // handleDateChange(new Date());
+        // handleTimeChange(new Date());
+        // alert("Appointment Request Sent Successful");
         message.success("Appointment Request Sent Successful");
-        setEmail("");
-        setPhoneNumber("");
-        setReason("");
-        setDoctor("");
-        setAge("");
-        handleDateChange(new Date());
-        handleTimeChange(new Date());
-        navigate("/");
+        // navigate("/home")
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       message.error("Error in submitting!!");
       setEmail("");
       setPhoneNumber("");

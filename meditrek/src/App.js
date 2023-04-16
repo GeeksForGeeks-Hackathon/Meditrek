@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
+import Bot from "./components/Bot/Bot";
 import Home from "./container/Home/Home";
 import MyDocs from "./container/MyDocs/MyDocs";
 import Login from "./container/Login/Login";
@@ -24,10 +25,11 @@ const [state, setstate] = useState(false);
           <Route exact path="/" element={<Home />} />
           {/* <Route path="/signin" element={<SignIn />} /> */}
           <Route path="/appointment" element={<AppointmentForm />} />
+          <Route path="/bot" element={<Bot/>}/>
           <Route path="/appointmentdash" element={<AppointmentDashboard/>}/>
           <Route path="/login" element={<Login state={state} setstate={setstate} />} />
           <Route path="/register" element={<Register />} />
-          {/* <Route path="/healthreport" element={<MyDocs />} /> */}
+          <Route path="/healthreport" element={<MyDocs />} />
         </Routes>
         </React.Fragment>)}
 
