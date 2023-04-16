@@ -39,12 +39,14 @@ Insert gif or link to demo
 
 
 ## Run Locally
+Open a Director and bash in it
 
 Clone the project
 
 ```bash
-https://github.com/GeeksForGeeks-Hackathon/Meditrex.git
+git clone https://github.com/GeeksForGeeks-Hackathon/Meditrex.git
 ```
+Add enviornment variables in .env file
 
 
 Install dependencies
