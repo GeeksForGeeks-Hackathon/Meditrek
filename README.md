@@ -2,17 +2,17 @@
   
 ## Meditrik 🔭-A smarter hospital in your device
 
-Introducing Meditrik, an innovative platform that combines an appointment system, an AI-based medical advisor, and a portal to download health documents all in one place.
+Introducing Meditrek, an innovative platform that combines an appointment system, an AI-based medical advisor, and a portal to download health documents all in one place.
 
 The appointment system allows patients to book appointments with healthcare providers quickly and easily. Our user-friendly interface makes it simple to find and schedule appointments with the right provider based on your needs and availability.
 
 AI-based medical advisors help patients make informed health decisions. Using the latest artificial intelligence technology, our medical advisors provide personalized advice and recommendations based on your health data and symptoms.
 
-Our portal to download health documents provides patients with easy access to their medical records, test results, and other critical health documents. Meditrik lets you access your health information securely and from anywhere at any time.
+Our portal to download health documents provides patients with easy access to their medical records, test results, and other critical health documents. Meditrek lets you access your health information securely and from anywhere at any time.
 
-Our platform is designed with both patients and healthcare providers in mind. Providers can use Meditrik to manage their schedules, reduce wait times, and improve patient outcomes. Patients can use Meditrik to take control of their health and make informed care decisions.
+Our platform is designed with both patients and healthcare providers in mind. Providers can use Meditrek to manage their schedules, reduce wait times, and improve patient outcomes. Patients can use Meditrek to take control of their health and make informed care decisions.
 
-Meditrik is a comprehensive and convenient platform that streamlines healthcare delivery, empowers patients, and improves healthcare outcomes. Sign up today to start experiencing the benefits of Meditrik!
+Meditrek is a comprehensive and convenient platform that streamlines healthcare delivery, empowers patients, and improves healthcare outcomes. Sign up today to start experiencing the benefits of Meditrek!
 
 
 
@@ -26,8 +26,11 @@ Meditrik is a comprehensive and convenient platform that streamlines healthcare 
 
 
 ## Screenshots
+![screenshot](https://user-images.githubusercontent.com/84934990/232253432-46320ac3-3075-4eac-a423-ea8bd3f25d3f.png)
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![screenshot](https://user-images.githubusercontent.com/84934990/232253445-ef2f3ba7-a92b-40c0-9bae-441a10ca24f1.png)
+
+![screenshot](https://user-images.githubusercontent.com/84934990/232253470-e396baf3-7fed-4ff7-987f-eb950421bcc1.png)
 
 
 ## Demo
@@ -36,24 +39,38 @@ Insert gif or link to demo
 
 
 ## Run Locally
+Open a Director and bash in it
 
 Clone the project
 
 ```bash
-https://github.com/GeeksForGeeks-Hackathon/Meditrex.git
+git clone https://github.com/GeeksForGeeks-Hackathon/Meditrex.git
 ```
+Add enviornment variables in .env file
 
 
 Install dependencies
 
 ```bash
+cd meditrek
+```
+
+```bash
   npm install
+```
+
+```bash 
+cd ..
+```
+
+```bash
+npm install
 ```
 
 Start the server and client concurrently
 
 ```bash
-  npm start
+  npm run dev
 ```
 
 
