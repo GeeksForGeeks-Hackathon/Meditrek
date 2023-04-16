@@ -126,6 +126,13 @@ Its live on:-  https://meditrex.onrender.com/
 
 - Make the system more robust and secure
 
+## Websites Functionalities
+
+- Dark Mode
+- Multiple Language Interface
+- Better UI
+- Better Response Time
+
 ## License
 
 
