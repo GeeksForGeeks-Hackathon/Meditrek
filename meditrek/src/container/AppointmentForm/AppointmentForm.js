@@ -7,7 +7,7 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import DateFnsUtils from "@date-io/date-fns";
 import Typography from "@material-ui/core/Typography";
-// import Footer from "../../components/FooterComp/FooterComp";
+
 import {
   DatePicker,
   TimePicker,
@@ -23,6 +23,13 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     height: "80vh",
+  },
+  title: {
+    fontWeight: 'bold',
+    marginBottom: 30,
+    textAlign: 'center',
+    color:theme.palette.primary.main,
+
   },
   form: {
     display: "flex",
@@ -73,16 +80,7 @@ const AppointmentForm = () => {
      
       if (res.data.success) {
       
-        // setEmail("");
-        // setPhoneNumber("");
-        // setReason("");
-        // setDoctor("");
-        // setAge("");
-        // handleDateChange(new Date());
-        // handleTimeChange(new Date());
-        // alert("Appointment Request Sent Successful");
         message.success("Appointment Request Sent Successful");
-        // navigate("/home")
       }
     } catch (error) {
       // console.log(error);
@@ -100,7 +98,7 @@ const AppointmentForm = () => {
   return (
     <div className={classes.formContainer}>
       <form  className={classes.form}>
-        <Typography variant="h4" className={classes.formHeading}>
+        <Typography variant="h4" className={classes.title}>
           Schedule an Appointment
         </Typography>
         <Grid container spacing={2}>

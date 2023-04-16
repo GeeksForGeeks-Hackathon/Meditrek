@@ -64,7 +64,7 @@ const Navbar = () => {
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/bot">
-                    MediBot
+                   HealAI
                   </Link>
                 </li>
                 <li className="nav-item">

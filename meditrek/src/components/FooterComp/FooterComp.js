@@ -1,5 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { Instagram, LinkedIn, Facebook, Twitter } from '@material-ui/icons';
+
 import { Container, Grid, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
@@ -42,6 +44,20 @@ const Footer = () => {
             <Typography  variant="body1">
             Stay up-to-date on the latest news and healthcare insights by following us on social media!
             </Typography>
+            <div className="mx-2 p-3 " >
+            <Instagram/>
+
+            <Twitter/>
+            
+            <Facebook/>
+      
+            <LinkedIn/>
+            </div>
+
+           
+         
+
+  
             </div>
    
           </Grid>
@@ -63,6 +79,7 @@ const Footer = () => {
             <Typography variant="body1">
               123 Main Street<br />
               Anytown, USA 12345<br />
+              <p>Copywrite @Meditrek</p>
               <a href="tel:555-555-5555" className={classes.link}>(555) 555-5555</a><br />
               <a href="mailto:info@example.com" className={classes.link}>info@example.com</a><br />
             </Typography>
