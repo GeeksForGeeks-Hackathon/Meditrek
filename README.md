@@ -104,7 +104,7 @@ Its live on:-  https://meditrex.onrender.com/
  
  [![firebase](https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg)](https://firebase.google.com/)
  
- [![dialogflow](https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/Dialogflow_logo.svg/1041px-Dialogflow_logo.svg.png?20171011172202 {:height="90px" width="200px"})](https://cloud.google.com/dialogflow/)
+ [![dialogflow](https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/Dialogflow_logo.svg/1041px-Dialogflow_logo.svg.png?20171011172202 = 90x300)](https://cloud.google.com/dialogflow/)
 
 #### Devops:
 
