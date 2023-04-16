@@ -2,11 +2,11 @@
   
 ## Meditrik 🔭-A smarter hospital in your device
 
-Introducing Meditrek, an innovative platform that combines an appointment system, an AI-based medical advisor, and a portal to download health documents all in one place.
+Introducing Meditrek, an innovative platform that combines an appointment system, an AI-based medical advisor chatbot, and a portal to download health documents all in one place.
 
 The appointment system allows patients to book appointments with healthcare providers quickly and easily. Our user-friendly interface makes it simple to find and schedule appointments with the right provider based on your needs and availability.
 
-AI-based medical advisors help patients make informed health decisions. Using the latest artificial intelligence technology, our medical advisors provide personalized advice and recommendations based on your health data and symptoms.
+AI-based medical advisor chatbot help patients make informed health decisions. Using the latest artificial intelligence technology and machine learning, our chatbot provide personalized advice and recommendations based on your health data and symptoms.
 
 Our portal to download health documents provides patients with easy access to their medical records, test results, and other critical health documents. Meditrek lets you access your health information securely and from anywhere at any time.
 
