@@ -34,8 +34,8 @@ Meditrek is a comprehensive and convenient platform that streamlines healthcare 
 
 
 ## Demo
+![new_recording (Original)](https://user-images.githubusercontent.com/84934990/232327789-a43ced11-abd0-4ea2-a2d9-98212eee10d5.gif)
 
-Insert gif or link to demo
 
 
 ## Run Locally
